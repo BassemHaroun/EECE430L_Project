@@ -1,0 +1,18 @@
+.root {
+    -fx-background-color: #423930;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 500 500;
+    -fx-background-position: center center;
+}
+.header {
+    -fx-font-size: 24;
+    -fx-text-fill: #e7bd94;
+}
+.value-label {
+    -fx-font-size: 20;
+    -fx-text-fill: #ffffff;
+}
+.value {
+    -fx-font-size: 18;
+    -fx-text-fill: #ffffff;
+}

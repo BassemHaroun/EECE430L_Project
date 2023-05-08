@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.DatePicker?>
+
+
+<?import javafx.scene.control.TextField?>
+<GridPane fx:controller="com.ahmadelzein.exchange.statistics.Statistics"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10"
+          vgap="10" prefHeight="475.0" prefWidth="1000.0" stylesheets="@statistics.css" styleClass="root">
+    <Label styleClass="header"  text="Statistics"
+           textAlignment="CENTER" GridPane.columnSpan="2"
+           GridPane.halignment="CENTER"
+    />
+
+    <Label styleClass="value-label"  text="Start Date"
+           GridPane.columnSpan="3" GridPane.rowIndex="1"/>
+    <DatePicker fx:id="start_date" GridPane.columnSpan="2" GridPane.rowIndex="1"/>
+    <Label styleClass="value-label" text="End Date"
+           GridPane.columnSpan="3" GridPane.rowIndex="2"/>
+    <DatePicker fx:id="end_date"  GridPane.columnSpan="2" GridPane.rowIndex="2"/>
+
+    <Label styleClass="header"  text="Sell Rate"
+           GridPane.columnSpan="2" GridPane.rowIndex="3"/>
+
+    <Label styleClass="value" text="usd_to_lbp_avg" GridPane.columnIndex="1"
+           GridPane.rowIndex="4"/>
+    <Label styleClass="value-label" fx:id="usd_to_lbp_avg" text="Average"
+           GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+    <Label styleClass="value" text="usd_to_lbp_min" GridPane.columnIndex="3"
+           GridPane.rowIndex="4"/>
+    <Label styleClass="value-label" fx:id="usd_to_lbp_min" text="Minimum"
+           GridPane.columnIndex="3" GridPane.rowIndex="5"/>
+    <Label styleClass="value" text="usd_to_lbp_max" GridPane.columnIndex="5"
+           GridPane.rowIndex="4"/>
+    <Label styleClass="value-label" fx:id="usd_to_lbp_max" text="Maximum"
+           GridPane.columnIndex="5" GridPane.rowIndex="5"/>
+    <Label styleClass="value" text="usd_to_lbp_median" GridPane.columnIndex="1"
+           GridPane.rowIndex="6"/>
+    <Label styleClass="value-label" fx:id="usd_to_lbp_median" text="Median"
+           GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+    <Label styleClass="value" text="usd_to_lbp_var" GridPane.columnIndex="3"
+           GridPane.rowIndex="6"/>
+    <Label styleClass="value-label" fx:id="usd_to_lbp_var" text="Variance"
+           GridPane.columnIndex="3" GridPane.rowIndex="7"/>
+    <Label styleClass="value" text="usd_to_lbp_stddev" GridPane.columnIndex="5"
+           GridPane.rowIndex="6"/>
+    <Label styleClass="value-label" fx:id="usd_to_lbp_stddev" text="Standard Deviation"
+           GridPane.columnIndex="5" GridPane.rowIndex="7"/>
+
+    <Label styleClass="header"  text="Buy Rate"
+           GridPane.columnSpan="2" GridPane.rowIndex="9"/>
+
+    <Label styleClass="value" text="lbp_to_usd_avg" GridPane.columnIndex="1"
+           GridPane.rowIndex="10"/>
+    <Label styleClass="value-label" fx:id="lbp_to_usd_avg" text="Average"
+           GridPane.columnIndex="1" GridPane.rowIndex="11"/>
+    <Label styleClass="value" text="lbp_to_usd_min" GridPane.columnIndex="3"
+           GridPane.rowIndex="10"/>
+    <Label styleClass="value-label" fx:id="lbp_to_usd_min" text="Minimum"
+           GridPane.columnIndex="3" GridPane.rowIndex="11"/>
+    <Label styleClass="value" text="lbp_to_usd_max" GridPane.columnIndex="5"
+           GridPane.rowIndex="10"/>
+    <Label styleClass="value-label" fx:id="lbp_to_usd_max" text="Maximum"
+           GridPane.columnIndex="5" GridPane.rowIndex="11"/>
+    <Label styleClass="value" text="lbp_to_usd_median" GridPane.columnIndex="1"
+           GridPane.rowIndex="12"/>
+    <Label styleClass="value-label" fx:id="lbp_to_usd_median" text="Median"
+           GridPane.columnIndex="1" GridPane.rowIndex="13"/>
+    <Label styleClass="value" text="lbp_to_usd_var" GridPane.columnIndex="3"
+           GridPane.rowIndex="12"/>
+    <Label styleClass="value-label" fx:id="lbp_to_usd_var" text="Variance"
+           GridPane.columnIndex="3" GridPane.rowIndex="13"/>
+    <Label styleClass="value" text="lbp_to_usd_stddev" GridPane.columnIndex="5"
+           GridPane.rowIndex="12"/>
+    <Label styleClass="value-label" fx:id="lbp_to_usd_stddev" text="Standard Deviation"
+           GridPane.columnIndex="5" GridPane.rowIndex="13"/>
+
+</GridPane>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.ahmadelzein.exchange.graph.Graph">
+    <Label styleClass="header"  text="Graph"
+           textAlignment="CENTER" GridPane.columnSpan="2"
+           GridPane.halignment="CENTER"
+    />
+    <Label styleClass="value-label"  text="Start Date"
+           GridPane.columnSpan="3" GridPane.rowIndex="1"/>
+    <DatePicker fx:id="start_date" GridPane.columnSpan="2" GridPane.rowIndex="1"/>
+    <Label styleClass="value-label" text="End Date"
+           GridPane.columnSpan="3" GridPane.rowIndex="2"/>
+    <DatePicker fx:id="end_date"  GridPane.columnSpan="2" GridPane.rowIndex="2"/>
+
+    <LineChart styleClass="test" fx:id="chart" layoutX="40.0" layoutY="0" prefHeight="205.0" prefWidth="409.0" GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="7">
+        <xAxis>
+            <NumberAxis fx:id="yAxis" side="LEFT" />
+        </xAxis>
+        <yAxis>
+            <NumberAxis side="BOTTOM" fx:id="xAxis" />
+        </yAxis>
+    </LineChart>
+
+</AnchorPane>

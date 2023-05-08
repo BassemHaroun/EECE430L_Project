@@ -1,0 +1,15 @@
+.root {
+    -fx-background-color: #423930;
+}
+.title {
+    -fx-font-size: 20px;
+    -fx-text-fill: #e7bd94;
+}
+.header {
+    -fx-font-size: 24;
+    -fx-text-fill: #e7bd94;
+}
+.value-label {
+    -fx-font-size: 20;
+    -fx-text-fill: #ffffff;
+}

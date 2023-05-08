@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            fx:id="borderPane" fx:controller="com.ahmadelzein.exchange.Parent"
+            xmlns:fx="http://javafx.com/fxml" prefHeight="400.0"
+            stylesheets="@parent.css"
+            prefWidth="1000.0">
+    <left>
+        <VBox spacing="5" styleClass="nav-container" fillWidth="true">
+            <Button styleClass="nav-button" text="Exchange Rate" onAction="#ratesSelected"/>
+            <Button fx:id="stats" styleClass="nav-button" text="Statistics" onAction="#statSelected"/>
+            <Button fx:id="graph" styleClass="nav-button" text="Graph" onAction="#graphSelected"/>
+            <Button fx:id="transactionButton" styleClass="nav-button" text="Transactions" onAction="#transactionsSelected"/>
+            <Button fx:id="pendingButton" styleClass="nav-button" text="Pending" onAction="#pendingSelected"/>
+            <Button fx:id="calculator" styleClass="nav-button" text="Calculator" onAction="#calculatorSelected"/>
+            <Button fx:id="loginButton" styleClass="nav-button" text="Login" onAction="#loginSelected"/>
+            <Button fx:id="registerButton" styleClass="nav-button" text="Register" onAction="#registerSelected"/>
+            <Button fx:id="logoutButton" styleClass="nav-button" text="Log out" onAction="#logoutSelected"/>
+        </VBox>
+    </left>
+    <center>
+        <fx:include source="rates/layout.fxml"/>
+    </center>
+</BorderPane>
