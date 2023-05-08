@@ -1,0 +1,296 @@
+openapi: 3.0.3
+info:
+  title: Shaymaa & Co. for Currency Exchange
+  description: Exchange money easily and smoothly with us
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: apiteam@swagger.io
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.11
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+servers:
+  - url: https://localhost
+tags:
+  - name: trans
+    description: Dollar Exchange Rate in Lebanon
+    externalDocs:
+      description: Find out more
+      url: http://swagger.io
+  
+  - name: user
+    description: Operations about user
+paths:
+  /trans:
+    get:
+      tags:
+        - trans
+      summary: Get transactions 
+      description: Get transactions recorded by the user
+      operationId: fetchTrans
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Trans'
+        '400':
+          description: Invalid ID supplied
+        '405':
+          description: Validation exception
+
+    post:
+      tags:
+        - trans
+      summary: Post a transaction
+      description: Post a transaction
+      operationId: trans
+      requestBody:
+        description: post a transaction by authenticated and unauthenticated users
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Trans'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Trans'
+        '405':
+          description: Invalid input
+
+
+ 
+  
+ 
+
+ 
+  /user:
+    post:
+      tags:
+        - user
+      summary: Create user
+      description: create user
+      operationId: createUser
+      requestBody:
+        description: Created user object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        default:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+                
+    get:
+      tags:
+        - user
+      summary: returns user info
+      description: returns user info
+      operationId: returns user info
+      responses:
+        default:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+
+  /authentication:
+    post:
+      tags:
+        - authentication
+      summary: login
+      description: Login using username and password
+      operationId: authentication
+      requestBody:
+        description: login 
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+
+      responses:
+        default:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Token'
+   
+  /exchangeRate:
+    get:
+      tags:
+        - exchangeRate
+      summary: Get exchange rate 
+      description: Get exchange rate 
+      operationId: find_exchangeRate
+      responses:
+        default:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExchangeRate'
+  /accept:
+    post:
+      tags:
+        - Accept a transaction
+      summary: Accept a pending transaction
+      description: exchange money by accepting pending transactions
+      operationId: accept
+      requestBody:
+        description: accept transaction 
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Trans'
+
+      responses:
+        default:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Trans'
+                
+                
+  /exchangeRateStats:
+    post:
+      tags:
+        - exchange Rate Statistics
+      summary: login
+      description: Login using username and password
+      operationId: exchange_rate_stats
+      requestBody:
+        description: login 
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        default:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+  /addFunds:
+    post:
+      tags:
+        - Add funds to your wallet
+      summary:  Add funds to your wallet
+      description:  Add funds to your wallet
+      operationId: addFunds
+      requestBody:
+        description:  Add funds to your wallet 
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        default:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+                
+                
+  /graph:
+    post:
+      tags:
+        - graph
+      summary: Exchange rate per time interval
+      description: Exchange rate per time interval
+      operationId: graph
+      requestBody:
+        description: Exchange rate per time interval 
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+
+      responses:
+        default:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+
+components:
+  schemas:
+    
+    Trans:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 100000
+        usd_amount:
+          type: number
+          example: 100
+        lbp_amount:
+          type: number
+          example: 50000000
+        usd_to_lbp:
+          type: boolean
+          example: 'True'
+        buyer_id:
+          type: integer
+          format: int64
+          example: 1
+        seller_id:
+          type: integer
+          format: int64
+          example: 2 
+        
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 10
+        username:
+          type: string
+          example: theUser
+        usd_amount:
+          type: number
+          example: 100
+        lbp_amount:
+          type: number
+          example: 50000000
+        
+        
+    Token:
+      type: object
+      properties:
+        token:
+          type: string
+          example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODMyMTc3MDcsImlhdCI6MTY4Mjg3MjEwNywic3ViIjoxfQ.FGoTnviMtNngJfDzIabjtoQUieKS1hsa2x441qp4M_w"
+
+    ExchangeRate:
+      type: object
+      properties:
+        usd_to_lbp:
+          type: number
+          example: 94000
+        lbp_to_usd:
+          type: number
+          example: 94500
+  
+    
