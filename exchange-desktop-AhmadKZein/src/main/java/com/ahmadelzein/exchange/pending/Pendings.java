@@ -52,6 +52,8 @@ public class Pendings implements Initializable {
                 });
     }
 
+    //https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/TableView.html
+    //https://docs.oracle.com/javafx/2/fxml_get_started/fxml_tutorial_intermediate.html
     public void accept(ActionEvent actionEvent) {
         Pending pend = (Pending) tableView.getSelectionModel().getSelectedItem();
         Transaction_id trans = new Transaction_id(pend.getId());

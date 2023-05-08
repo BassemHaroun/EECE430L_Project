@@ -37,6 +37,8 @@ public class Statistics {
     @FXML
     private void fetchStats() {
         ExchangeService.exchangeApi().getStats().enqueue(new Callback<Stats>() {
+
+            //https://www.geeksforgeeks.org/javafx-datepicker-with-examples/
             @Override
             public void onResponse(Call<Stats> call, Response<Stats> response) {
                 Stats statistics = response.body();
